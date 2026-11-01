@@ -210,16 +210,44 @@
 //+++++++++++++Problem 1 +++++++++++++
 //Largest element in Array
 
-class LargestElement {
-    public static void main(String args[]) {
+// class LargestElement {
+//     public static void main(String args[]) {
 
-        int[] arr = { 10, 20, 30, 40 };
-        int max = arr[0];
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
+//         int[] arr = { 10, 20, 30, 40 };
+//         int max = arr[0];
+//         for (int i = 1; i < arr.length; i++) {
+//             if (arr[i] > max) {
+//                 max = arr[i];
+//             }
+//         }
+//         System.out.println(max);
+//     }
+// }
+
+//+++++++++++++++SecondLargest++++++
+ class SecondLargest {
+
+    public static void main(String[] args) {
+
+        int[] arr = {10,20,5,45,18};
+
+        int largest = arr[0];
+        int secondLargest = -1;
+
+        for(int i = 1; i < arr.length; i++) {
+
+            if(arr[i] > largest) {
+
+                secondLargest = largest;
+                largest = arr[i];
+
+            } else if(arr[i] > secondLargest &&
+                     arr[i] != largest) {
+
+                secondLargest = arr[i];
             }
         }
-        System.out.println(max);
+
+        System.out.println(secondLargest);
     }
 }
